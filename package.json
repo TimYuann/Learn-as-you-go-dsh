@@ -1,6 +1,6 @@
 {
   "name": "learn-as-you-go-dsh",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Learn As You Go — keep the technical output, put the plain-language Chinese meaning directly below it. A native DSH (DeepSeek Harness) bundle plugin: system-prompt policy section, settings namespace with hot updates, and /learn-as-you-go commands.",
   "type": "module",
   "main": "lib/index.js",

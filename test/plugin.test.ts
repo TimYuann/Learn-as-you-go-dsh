@@ -79,9 +79,9 @@ function invocation(rawInput: string) {
 test("plugin/shape: name, inject and Config defaults", () => {
   assert.equal(name, "learn-as-you-go-dsh");
   assert.deepEqual(inject, ["systemPrompt", "commands", "settings"]);
-  assert.deepEqual(Config({}), { enabled: false, level: 2 });
-  assert.deepEqual(Config({ enabled: true }), { enabled: true, level: 2 });
-  assert.deepEqual(Config({ level: 1 }), { enabled: false, level: 1 });
+  assert.deepEqual(Config({}), { enabled: true, level: 1 });
+  assert.deepEqual(Config({ enabled: false }), { enabled: false, level: 1 });
+  assert.deepEqual(Config({ level: 2 }), { enabled: true, level: 2 });
 });
 
 test("plugin/section: enabled L2 mounts exactly the L2 body", async () => {

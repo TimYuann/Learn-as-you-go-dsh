@@ -39,10 +39,10 @@ export interface LearnConfig {
 }
 
 export const Config = z.object({
-  enabled: z.boolean().default(false),
+  enabled: z.boolean().default(true),
   level: z
     .union([z.const(1), z.const(2)])
-    .default(2),
+    .default(1),
 });
 
 /** Fixed prompt-section identity. */

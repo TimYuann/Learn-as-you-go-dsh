@@ -37,7 +37,8 @@ dsh plugin --profile web add ./learn-as-you-go-dsh-<version>.tgz
 ```
 
 启动 profile（如 `dsh web`）后，启动日志出现
-`[learn-as-you-go-dsh] plugin loaded ...`。新安装默认关闭。
+`[learn-as-you-go-dsh] plugin loaded ...`。新安装默认**开启**，默认档位
+**1 · 入门**；`/learn-as-you-go off` 或设置面板可随时关闭。
 
 ### 开发 overlay（不安装）
 
@@ -58,8 +59,8 @@ npm run dev      # 通过 Cordis loader 挂载 ./cordis.yml，加载后退出
 | `/learn-as-you-go on` | 开启解释（写入 settings，持久化） |
 | `/learn-as-you-go off` | 关闭解释 |
 | `/learn-as-you-go status` | 显示当前状态与 section 挂载情况 |
-| `/learn-as-you-go level 1` | 入门档（30–50 字，口语化、可加类比） |
-| `/learn-as-you-go level 2` | 标准档（15–25 字，简短直白，默认） |
+| `/learn-as-you-go level 1` | 入门档（30–50 字，口语化、可加类比，默认） |
+| `/learn-as-you-go level 2` | 标准档（15–25 字，简短直白） |
 
 设置面板（Web UI 设置 → 插件）中可编辑 `learn-as-you-go` 命名空间的
 `enabled` 与 `level`，即时生效（live applies）。
