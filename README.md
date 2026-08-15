@@ -46,12 +46,18 @@ The retry loop can create duplicate writes because the idempotency key is genera
 
 ## 安装
 
-打包后安装进 profile：
+从 GitHub Release 直接安装（v0.1.1）：
+
+```bash
+dsh plugin --profile web add https://github.com/TimYuann/Learn-as-you-go-dsh/releases/download/v0.1.1/learn-as-you-go-dsh-0.1.1.tgz
+```
+
+或自行打包安装（包名带当前版本号，以 `npm pack` 实际输出为准）：
 
 ```bash
 npm run build
-npm pack                          # 产生 learn-as-you-go-dsh-<version>.tgz
-dsh plugin --profile web add ./learn-as-you-go-dsh-<version>.tgz
+npm pack                          # 产生 learn-as-you-go-dsh-<实际版本号>.tgz
+dsh plugin --profile web add ./learn-as-you-go-dsh-<实际版本号>.tgz
 ```
 
 启动 profile（如 `dsh web`）后，启动日志出现
