@@ -13,6 +13,24 @@ The retry loop can create duplicate writes because the idempotency key is genera
 ↳ 重试时可能写入重复数据，因为“判断是不是同一次操作”的 key 是每次重试时重新生成的。
 ```
 
+## 效果展示
+
+真实案例（默认档位 L1 · 入门，30–50 字，口语化、可加类比）：
+
+```md
+`dsh` 是 DeepSeek Harness 的 profile 启动器；profile 是多个 **bundle 插件**按序叠加的配置树，每个 bundle 是一个在 `package.json` 声明 `dsh.bundle.patch` 的 npm 包。配置树以空根起步，逐层应用 `dsh.profile.bundles` 中每个 bundle 的 patch、profile 自身的 `cordis.patch.yml`、home 级 `$DSH_HOME/cordis.patch.yml` 与 `--patch` 覆盖层，patch 按 `id` 寻址、整行替换、后层胜出。
+
+↳ dsh 启动时把一组插件包按先后顺序叠成一份总配置，每层补丁按条目标记整行替换，越靠后的层越优先，最后盖上去的说了算。
+```
+
+同一锚点切到 L2 · 标准（15–25 字，简短直白）：
+
+```md
+`dsh` 是 DeepSeek Harness 的 profile 启动器；profile 是多个 **bundle 插件**按序叠加的配置树，每个 bundle 是一个在 `package.json` 声明 `dsh.bundle.patch` 的 npm 包。配置树以空根起步，逐层应用 `dsh.profile.bundles` 中每个 bundle 的 patch、profile 自身的 `cordis.patch.yml`、home 级 `$DSH_HOME/cordis.patch.yml` 与 `--patch` 覆盖层，patch 按 `id` 寻址、整行替换、后层胜出。
+
+↳ profile 配置由插件层叠拼出，后层按 id 整行覆盖，越靠后越优先。
+```
+
 ## 与 pi 移植版的区别
 
 这是全新实现，不复用旧项目的 Core/pi 契约：
